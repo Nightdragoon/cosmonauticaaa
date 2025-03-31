@@ -1,0 +1,21 @@
+# ninja log v5
+9697	9701	1743314005314751963	curl-populate-prefix/src/curl-populate-stamp/curl-populate-update	7e00cef13ec2b4af
+9718	9723	1743314005334751437	/home/nightdragon/cosmonautica/build/_deps/curl-subbuild/curl-populate-prefix/src/curl-populate-stamp/curl-populate-test	caa28c04343f81f
+9723	9731	1743314005342751227	/home/nightdragon/cosmonautica/build/_deps/curl-subbuild/CMakeFiles/curl-populate-complete	89c33bc33f45fe4
+9697	9701	1743314005314751963	/home/nightdragon/cosmonautica/build/_deps/curl-subbuild/curl-populate-prefix/src/curl-populate-stamp/curl-populate-update	7e00cef13ec2b4af
+9714	9718	1743314005330751542	/home/nightdragon/cosmonautica/build/_deps/curl-subbuild/curl-populate-prefix/src/curl-populate-stamp/curl-populate-install	3aaa0831492b0520
+9701	9705	1743314005318751858	/home/nightdragon/cosmonautica/build/_deps/curl-subbuild/curl-populate-prefix/src/curl-populate-stamp/curl-populate-patch	37d330005069b356
+9714	9718	1743314005330751542	curl-populate-prefix/src/curl-populate-stamp/curl-populate-install	3aaa0831492b0520
+6	9697	1743314005310752069	/home/nightdragon/cosmonautica/build/_deps/curl-subbuild/curl-populate-prefix/src/curl-populate-stamp/curl-populate-download	193e88b89806f94e
+9710	9714	1743314005326751648	curl-populate-prefix/src/curl-populate-stamp/curl-populate-build	17ebf6c56a31d00c
+9723	9731	1743314005342751227	CMakeFiles/curl-populate-complete	89c33bc33f45fe4
+6	9697	1743314005310752069	curl-populate-prefix/src/curl-populate-stamp/curl-populate-download	193e88b89806f94e
+1	6	1743313995619009703	/home/nightdragon/cosmonautica/build/_deps/curl-subbuild/curl-populate-prefix/src/curl-populate-stamp/curl-populate-mkdir	1d81e530e9e8ee6c
+9723	9731	1743314005342751227	curl-populate-prefix/src/curl-populate-stamp/curl-populate-done	89c33bc33f45fe4
+1	6	1743313995619009703	curl-populate-prefix/src/curl-populate-stamp/curl-populate-mkdir	1d81e530e9e8ee6c
+9710	9714	1743314005326751648	/home/nightdragon/cosmonautica/build/_deps/curl-subbuild/curl-populate-prefix/src/curl-populate-stamp/curl-populate-build	17ebf6c56a31d00c
+9718	9723	1743314005334751437	curl-populate-prefix/src/curl-populate-stamp/curl-populate-test	caa28c04343f81f
+9705	9710	1743314005322751753	curl-populate-prefix/src/curl-populate-stamp/curl-populate-configure	cff61aa46be80ff1
+9723	9731	1743314005342751227	/home/nightdragon/cosmonautica/build/_deps/curl-subbuild/curl-populate-prefix/src/curl-populate-stamp/curl-populate-done	89c33bc33f45fe4
+9705	9710	1743314005322751753	/home/nightdragon/cosmonautica/build/_deps/curl-subbuild/curl-populate-prefix/src/curl-populate-stamp/curl-populate-configure	cff61aa46be80ff1
+9701	9705	1743314005318751858	curl-populate-prefix/src/curl-populate-stamp/curl-populate-patch	37d330005069b356
