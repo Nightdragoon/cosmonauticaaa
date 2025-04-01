@@ -34,6 +34,23 @@ app.get("/cosmos",(req,res) => {
 
 })
 
+app.get("/putLoc" , (req,res) =>{
+    var id = req.query.id;
+    var loc = req.query.loc;
+    con.connect(function(err){
+        if(err) throw err;
+        var sql = "UPDATE users set location = " + loc + " WHERE idPer = " + id + ";";
+        con.query(sql , function(err,result){
+            if(err) throw err;
+            console.log("valor insertado");
+            res.json({"id":"1"});;
+
+        })
+    })
+
+
+})
+
 app.get("/init" , (req,res) => {
     var ip = req.query.ip;
     set(ref(database , "url") , {
@@ -46,10 +63,11 @@ app.get("/init" , (req,res) => {
 })
 
 app.get("/new" , (req,res) => {
+    var id = req.query.id
     console.log("han entrado");
     con.connect(function(err){
         if(err) throw err;
-        var sql = "INSERT INTO users(location,data) VALUES('HREY','HET');";
+        var sql = "INSERT INTO users(location,data,idPer) VALUES('HREY','HET'," + id  + ");";
         con.query(sql , function(err , result){
             if(err) throw err;
             console.log("creado");
