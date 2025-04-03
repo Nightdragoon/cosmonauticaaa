@@ -34,6 +34,34 @@ app.get("/cosmos",(req,res) => {
 
 })
 
+app.get("/temperature" , (req,res) => {
+    var temp = req.query.temp;
+    var hum = req.query.hum;
+    con.connect(function(err){
+        if(err) throw err;
+        var sql = "UPDATE sensors set data = '" + temp+"-" + hum + "' WHERE name='temp';";
+        con.query(sql,function(err,result){
+            if(err) throw err;
+            console.log("valor de sensor cambiado")
+            res.json({"status":"ok"})
+        })
+    })
+
+})
+
+app.get("/getDataSensor" , (req,res) =>{
+    var sensor = req.query.sensor;
+    con.connect(function(err){
+        if(err) throw err;
+        var sql = "SELECT * FROM sensors;";
+        con.query(sql , function(err, result){
+            if(err) throw err;
+            console.log(result);
+            res.send(result);
+        })
+    })
+})
+
 app.get("/putLoc" , (req,res) =>{
     var id = req.query.id;
     var loc = req.query.loc;
