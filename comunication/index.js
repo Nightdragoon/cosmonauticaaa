@@ -50,7 +50,6 @@ app.get("/temperature" , (req,res) => {
 })
 
 app.get("/getDataSensor" , (req,res) =>{
-    var sensor = req.query.sensor;
     con.connect(function(err){
         if(err) throw err;
         var sql = "SELECT * FROM sensors;";
