@@ -4,7 +4,7 @@ import serial
 import time
 
 # Configurar el puerto serial (ajusta COMx según tu sistema)
-ser = serial.Serial('COM6', 9600)
+ser = serial.Serial('/dev/rfcomm0', 9600)
 time.sleep(2)
 
 # Inicializar MediaPipe manos
@@ -13,7 +13,7 @@ hands = mp_hands.Hands(max_num_hands=1)
 mp_drawing = mp.solutions.drawing_utils
 
 # Inicializar cámara
-cap = cv2.VideoCapture("http://192.168.100.9:4747/video")
+cap = cv2.VideoCapture("http://192.168.100.8:4747/video")
 
 prev_x = None
 threshold = 40  # Umbral de movimiento en píxeles
