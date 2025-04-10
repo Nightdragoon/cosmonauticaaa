@@ -78,6 +78,21 @@ app.get("/putLoc" , (req,res) =>{
 
 })
 
+app.get("/gas" , (req,res) => {
+    var state = req.query.state;
+    con.connect(function(err){
+        if(err) throw err;
+        var sql = "UPDATE sensors set data = '" + state + "' WHERE name='GAS';"
+        con.query(sql , function(err,result){
+            if(err) throw err;
+            console.log("valor insertado");
+            res.json({"id":"1"});;
+
+        })
+
+    })
+})
+
 app.get("/init" , (req,res) => {
     var ip = req.query.ip;
     set(ref(database , "url") , {
