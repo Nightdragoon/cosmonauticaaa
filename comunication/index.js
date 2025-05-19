@@ -1,6 +1,7 @@
 const express = require("express")
 const { initializeApp } = require("firebase/app");
 var { getDatabase , ref,set} = require("firebase/database");
+const cors = require('cors');
 var mysql = require("mysql2")
 
 const con = mysql.createConnection({
@@ -11,8 +12,9 @@ const con = mysql.createConnection({
     port:3306
 
 })
-
 var app = express();
+app.use(cors()); 
+
 const firebaseConfig = {
     apiKey: "AIzaSyCogfVqOkLzUrkglBeCx_CiWKwwkBG7dDg",
     authDomain: "cosmonautica-98b85.firebaseapp.com",
@@ -56,7 +58,7 @@ app.get("/getDataSensor" , (req,res) =>{
         con.query(sql , function(err, result){
             if(err) throw err;
             console.log(result);
-            res.send(result);
+            res.json({"data":result});
         })
     })
 })
@@ -80,6 +82,7 @@ app.get("/putLoc" , (req,res) =>{
 
 app.get("/gas" , (req,res) => {
     var state = req.query.state;
+    var rs = req.query.reco;
     con.connect(function(err){
         if(err) throw err;
         var sql = "UPDATE sensors set data = '" + state + "' WHERE name='GAS';"
@@ -91,6 +94,24 @@ app.get("/gas" , (req,res) => {
         })
 
     })
+})
+
+app.get("/calidad" , (req,res) =>{
+    var alcohol = req.query.alcohol;
+    var rs = req.query.rs;
+    var rl = req.query.rl;
+    con.connect(function(err){
+        if(err) throw err;
+        var sql = "UPDATE Calidad set Alcohol = '" + alcohol + "'," +"Rs = '" + rs + "'," + "Rl = '" + rl + "';" 
+        con.query(sql , function(err,result){
+            if(err) throw err;
+            console.log("valor insertado");
+            res.json({"id":"1"});;
+
+        })
+
+    })
+
 })
 
 app.get("/init" , (req,res) => {
